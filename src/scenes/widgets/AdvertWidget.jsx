@@ -1,7 +1,7 @@
 import { Typography, useTheme} from "@mui/material";
 import FlexBetween from "components/FlexBetween";
 import WidgetWrapper from "components/WidgetWrapper";
-
+import MBE from ".env"
 const AdvertWidget = () => {
     const { palette } = useTheme();
     const dark = palette.neutral.dark;
@@ -21,7 +21,7 @@ const AdvertWidget = () => {
          <img 
            width="100%"
            height="auto"
-           src="http://localhost:3001/assets/info4.jpeg"
+           src={`${MBE}/assets/info4.jpeg`}
            style={{borderRadius : "0.75rem", margin:"0.75rem 0"}}
            alt="advert" />
            <FlexBetween>
