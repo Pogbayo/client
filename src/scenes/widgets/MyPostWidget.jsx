@@ -24,7 +24,6 @@ import {
   import { useState } from "react";
   import { useDispatch, useSelector } from "react-redux";
   import { setPosts } from "state";
-  import MBE from ".env"
   
   const MyPostWidget = ({ picturePath }) => {
     const dispatch = useDispatch();
@@ -47,7 +46,7 @@ import {
         formData.append("picturePath", image.name);
       }
   
-      const response = await fetch(`${MBE}/posts`, {
+      const response = await fetch(`${process.env.REACT_APP_MBE}/posts`, {
         method: "POST",
         headers: { Authorization: `Bearer ${token}` },
         body: formData,

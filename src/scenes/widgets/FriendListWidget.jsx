@@ -4,7 +4,6 @@ import WidgetWrapper from "components/WidgetWrapper";
 import { useEffect } from "react";
 import  { useDispatch, useSelector } from "react-redux";
 import { setFriends } from "state";
-import MBE from ".env"
 
 const FriendListWidget = ({ userId }) => {
    const dispatch = useDispatch();
@@ -14,7 +13,7 @@ const FriendListWidget = ({ userId }) => {
 
    const getFriends = async () => {
     const response = await fetch(
-        `${MBE}/users/${userId}/friends`,
+        `${process.env.REACT_APP_MBE}/users/${userId}/friends`,
         {
             method :'GET',
             headers : { Authorization:`Bearer ${token}`}
